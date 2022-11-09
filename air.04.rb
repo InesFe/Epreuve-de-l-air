@@ -1,0 +1,31 @@
+#Un seul à la fois
+
+#parsing
+phrase_initiale = ARGV[0]
+
+#fonction
+def retirer_doublons(phrase)
+	
+	phrase_string = phrase.to_s
+	résultats = []
+	i = 0
+
+		while i < phrase_string.length
+
+			if phrase_string[i] != phrase_string[i-1]
+				résultats << phrase_string[i]
+			end
+
+		i+=1
+		end
+
+return résultats
+end
+
+#gestion d'erreurs
+if phrase_initiale.empty?
+	puts "error : -1"
+	exit
+else
+	puts retirer_doublons(phrase_initiale).join #affichage
+end 
